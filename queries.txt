@@ -1,0 +1,14 @@
+A query determining the number of people in the database
+SELECT COUNT (names) FROM student;
+
+A query determinating the department_id of a student given the name
+SELECT dept_no FROM COURSE WHERE intake_id IN(SELECT intake_id FROM entrance WHERE student_id IN(SELECT id FROM student WHERE name = "Najjoba Tracy"));
+
+A query determining the department name given the intake name
+SELECT departments FROM department WHERE id IN(SELECT dept_no FROM COURSE WHERE intake_id IN(SELECT id FROM INTAKES WHERE intake = "Trinity"));
+
+A query determining the department name given the intake name using join
+SELECT departments FROM department JOIN course JOIN intakes ON department.id = course.dept_no AND course.intake_id=intakes.id WHERE intakes.intake LIKE "%Trinity%"
+
+A query determining the and intake name department name given the intake name using join
+SELECT intake,departments FROM department JOIN course JOIN intakes ON department.id = course.dept_no AND course.intake_id=intakes.id WHERE intakes.intake LIKE "%Trinity%"

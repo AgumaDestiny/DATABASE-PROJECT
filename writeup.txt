@@ -1,0 +1,12 @@
+AGUMA DESTINY KAMPUMURE
+S21B23/010
+A94163
+
+DATABASE PROJECT
+My project explained
+My project is about certain students’ data based off of a certain university. This data contains the different courses offered by the different departments as mentioned in the csv file in the campus or university. The data also indicates each students’ university given identification number named as id, each of their names, the various intakes they attend including the gender or sex of the students.
+The database also shows the identification numbers of the different intakes in the intake table, the intake names as issued by the university due to the several ones available to control on the population of students in the school namely advent, trinity and easter. The intakes table also includes the number of students that were to report and attend or take on the different courses in the given departments that are available in that given intake.
+It also goes on to illustrate the identification number of the different departments in the departments table, the different departments’ names and different intakes they are available in represented in id form.
+The project required several joining tables which I named entrance table and course table. The entrance table combines the student table and the intakes table containing only id from both the student table and the intakes table.
+The course table on the other hand joins both the departments table and the intakes table. It contains just the id from the departments table and the id from then intakes table.
+It implies that my database contains five tables altogether with three major tables along with there attributes and two joining tables.
