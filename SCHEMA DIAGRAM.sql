@@ -1,8 +1,7 @@
---Active: 1657696784582@@localhost@3306@school
 CREATE TABLE `student` (
   `id` int PRIMARY KEY,
   `names` text,
-  `intake_student` text,
+  `intake_id` int,
   `sex` text
 );
 
@@ -18,23 +17,23 @@ CREATE TABLE `intakes` (
 );
 
 CREATE TABLE `course` (
-  `dept_no` int,
+  `dept_id` int,
   `intake_id` int
 );
 
 CREATE TABLE `department` (
-  `id` int PRIMARY KEY,
+  `department_id` int PRIMARY KEY,
   `departments` text,
   `intake_id_available` int
 );
 
-ALTER TABLE `student` ADD FOREIGN KEY (`intake`) REFERENCES `intakes` (`intake`);
+ALTER TABLE `student` ADD FOREIGN KEY (`intake_id`) REFERENCES `intakes` (`id`);
 
 ALTER TABLE `entrance` ADD FOREIGN KEY (`student_id`) REFERENCES `student` (`id`);
 
 ALTER TABLE `entrance` ADD FOREIGN KEY (`intake_id`) REFERENCES `intakes` (`id`);
 
-ALTER TABLE `course` ADD FOREIGN KEY (`dept_no`) REFERENCES `department` (`id`);
+ALTER TABLE `course` ADD FOREIGN KEY (`dept_id`) REFERENCES `department` (`department_id`);
 
 ALTER TABLE `course` ADD FOREIGN KEY (`intake_id`) REFERENCES `intakes` (`id`);
 
